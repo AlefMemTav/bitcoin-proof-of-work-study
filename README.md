@@ -2,8 +2,9 @@
 
 ## Documentação
 
-A versão navegável deste estudo é gerada pelo MkDocs a partir de
-`mkdocs.yml` e da pasta `docs/`.
+A versão navegável deste estudo está publicada no
+[GitHub Pages](https://alefmemtav.github.io/bitcoin-proof-of-work-study/) e é
+gerada pelo MkDocs a partir de `mkdocs.yml` e da pasta `docs/`.
 
 A redução do custo computacional do *Proof of Work* (PoW) do Bitcoin divide-se em dois domínios matematicamente distintos: a **redução da cardinalidade do espaço de busca** (encontrar um bloco testando menos candidatos do que um processo de Bernoulli, o que exige quebrar a resistência a pré-imagem parcial de 64 rodadas do $\text{SHA-256}^2$) e a **redução da complexidade aritmética por candidato avaliado** (diminuir o número de operações booleanas, adições modulares e transições de portas lógicas necessárias para testar cada *nonce*).
 
