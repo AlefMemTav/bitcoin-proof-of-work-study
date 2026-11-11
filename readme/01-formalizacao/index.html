@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alefmemtav.github.io/bitcoin-proof-of-work-study/readme/01-formalizacao/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Formalização matemática - Bitcoin Proof-of-Work Researcher</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Formaliza\u00e7\u00e3o matem\u00e1tica";
+        var mkdocs_page_input_path = "readme/01-formalizacao.md";
+        var mkdocs_page_url = "/bitcoin-proof-of-work-study/readme/01-formalizacao/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Bitcoin Proof-of-Work Researcher
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Início</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introdução</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/01-bitcoin/">Bitcoin em poucas palavras</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/02-hashes-e-sha256/">Hashes e SHA-256</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/03-proof-of-work/">O que é Proof of Work?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/04-como-ler/">Como estudar este material</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Conteúdo do README</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Formalização matemática</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#11-a-equacao-fundamental-do-proof-of-work">1.1. A Equação Fundamental do Proof of Work</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-diferenciacao-formal-de-problemas-criptograficos">1.2. Diferenciação Formal de Problemas Criptográficos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13-decomposicao-do-cabecalho-de-80-bytes-nos-blocos-do-sha-256">1.3. Decomposição do Cabeçalho de 80 Bytes nos Blocos do SHA-256</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#14-estrutura-algebrica-interna-da-funcao-de-compressao-sha-256">1.4. Estrutura Algébrica Interna da Função de Compressão SHA-256</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#15-estatistica-ajuste-de-dificuldade-e-espaco-de-busca">1.5. Estatística, Ajuste de Dificuldade e Espaço de Busca</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../02-estado-da-arte/">Estado da arte</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03-linhas-de-investigacao/">Linhas de investigação</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04-experimento/">Experimento e protótipo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05-hipoteses-e-oportunidades/">Hipóteses e oportunidades</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Bitcoin Proof-of-Work Researcher</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Conteúdo do README</li>
+      <li class="breadcrumb-item active">Formalização matemática</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="1-formalizacao-matematica-do-problema-e-intuicao-estrutural">1. Formalização Matemática do Problema e Intuição Estrutural<a class="headerlink" href="#1-formalizacao-matematica-do-problema-e-intuicao-estrutural" title="Permanent link">&para;</a></h2>
+<h3 id="11-a-equacao-fundamental-do-proof-of-work">1.1. A Equação Fundamental do Proof of Work<a class="headerlink" href="#11-a-equacao-fundamental-do-proof-of-work" title="Permanent link">&para;</a></h3>
+<p>Seja <span class="arithmatex">\(H \in \{0,1\}^{640}\)</span> o cabeçalho de um bloco candidato do Bitcoin, composto exatamente por 80 bytes (640 bits). Seja <span class="arithmatex">\(\text{SHA-256}: \{0,1\}^* \to \{0,1\}^{256}\)</span> a função hash criptográfica padronizada pelo NIST (FIPS 180-4). O problema de mineração consiste em encontrar uma tupla de parâmetros livres dentro de <span class="arithmatex">\(H\)</span> tal que a aplicação dupla da função satisfaça a inequação inteira:</p>
+<div class="arithmatex">\[\text{int}_{\text{LE}}\left(\text{SHA-256}\left(\text{SHA-256}(H)\right)\right) \le T\]</div>
+<p>onde <span class="arithmatex">\(\text{int}_{\text{LE}}(\cdot)\)</span> interpreta o vetor de saída de 256 bits (32 bytes) como um inteiro sem sinal em formato <em>little-endian</em>, e <span class="arithmatex">\(T \in \{0, 1, \dots, 2^{256}-1\}\)</span> é o limiar numérico (<em>target</em>) derivado do campo compacto de 32 bits <code>nBits</code> (<span class="arithmatex">\(0\text{x}EEFFFFFF\)</span> na forma base-256 científica):</p>
+<div class="arithmatex">\[T = \text{mantissa} \times 2^{8 \times (\text{expoente} - 3)}\]</div>
+<p><strong>Intuição Didática (A Máquina de Moer Dados):</strong> Imagine o <span class="arithmatex">\(\text{SHA-256}^2\)</span> como um liquidificador industrial com 64 lâminas giratórias seguidas por outro liquidificador idêntico de 64 lâminas. Você coloca uma ficha de 80 letras (o cabeçalho do bloco) e ele devolve um número de 256 dígitos binários (zeros e uns). O protocolo do Bitcoin exige que o número sorteado seja menor que o alvo <span class="arithmatex">\(T\)</span> — o que equivale a exigir que o resultado comece com uma sequência longa de zeros consecutivos (por exemplo, <span class="arithmatex">\(d \approx 76\)</span> zeros binários iniciais). Como o liquidificador embaralha os bits de forma caótica, mudar um único bit na entrada altera cerca de metade dos 256 bits da saída (efeito avalanche).</p>
+<h3 id="12-diferenciacao-formal-de-problemas-criptograficos">1.2. Diferenciação Formal de Problemas Criptográficos<a class="headerlink" href="#12-diferenciacao-formal-de-problemas-criptograficos" title="Permanent link">&para;</a></h3>
+<p>Muitas abordagens falham por confundir quatro problemas com complexidades assintóticas distintas:</p>
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Definição Matemática Formal</th>
+<th>Graus de Liberdade</th>
+<th>Complexidade Clássica</th>
+<th>Complexidade Quântica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Colisão</strong></td>
+<td>Encontrar <span class="arithmatex">\(x \neq y\)</span> tal que <span class="arithmatex">\(F(x) = F(y)\)</span></td>
+<td>Irrestrito em <span class="arithmatex">\(x, y\)</span></td>
+<td><span class="arithmatex">\(\mathcal{O}(2^{n/2}) = 2^{128}\)</span></td>
+<td><span class="arithmatex">\(\mathcal{O}(2^{n/3}) \approx 2^{85,3}\)</span></td>
+</tr>
+<tr>
+<td><strong>Pré-imagem Completa</strong></td>
+<td>Dado <span class="arithmatex">\(Y\)</span>, achar <span class="arithmatex">\(x\)</span> tal que <span class="arithmatex">\(F(x) = Y\)</span></td>
+<td>Irrestrito em <span class="arithmatex">\(x\)</span></td>
+<td><span class="arithmatex">\(\mathcal{O}(2^n) = 2^{256}\)</span></td>
+<td><span class="arithmatex">\(\mathcal{O}(2^{n/2}) = 2^{128}\)</span></td>
+</tr>
+<tr>
+<td><strong>Mineração (PoW)</strong></td>
+<td>Achar <span class="arithmatex">\(x \in \mathcal{V}\)</span> tal que <span class="arithmatex">\(F(x) \le T\)</span></td>
+<td>Restrito a <span class="arithmatex">\(\mathcal{V} \subset \{0,1\}^{640}\)</span></td>
+<td><span class="arithmatex">\(\mathcal{O}(2^{256}/T) = 2^d\)</span></td>
+<td><span class="arithmatex">\(\mathcal{O}(2^{d/2})\)</span></td>
+</tr>
+<tr>
+<td><strong>Criptoanálise</strong></td>
+<td>Distinguir <span class="arithmatex">\(F(x)\)</span> de permutação aleatória</td>
+<td>Análise algébrica de <span class="arithmatex">\(F\)</span></td>
+<td><span class="arithmatex">\(\mathcal{O}(2^{k}) \ll 2^d\)</span></td>
+<td>Depende do subespaço</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Por que busca de colisão não resolve mineração:</strong> Encontrar dois cabeçalhos <span class="arithmatex">\(H_1 \neq H_2\)</span> com o mesmo hash não garante que esse hash seja menor ou igual a <span class="arithmatex">\(T\)</span>.</li>
+<li><strong>Por que mineração é uma pré-imagem parcial com domínio restrito:</strong> Não buscamos um ponto único <span class="arithmatex">\(Y\)</span>, mas qualquer ponto no intervalo <span class="arithmatex">\([0, T]\)</span>. Em compensação, a entrada <span class="arithmatex">\(x\)</span> não pode ser qualquer string de 640 bits: os primeiros 68 bytes (versão, bloco anterior, raiz de Merkle) devem obedecer estritamente às regras de consenso do protocolo.</li>
+</ul>
+<h3 id="13-decomposicao-do-cabecalho-de-80-bytes-nos-blocos-do-sha-256">1.3. Decomposição do Cabeçalho de 80 Bytes nos Blocos do SHA-256<a class="headerlink" href="#13-decomposicao-do-cabecalho-de-80-bytes-nos-blocos-do-sha-256" title="Permanent link">&para;</a></h3>
+<p>O algoritmo SHA-256 processa mensagens em blocos de 512 bits (64 bytes) usando a construção de Merkle-Damgård com função de compressão Davies-Meyer <span class="arithmatex">\(\text{CF}: \{0,1\}^{256} \times \{0,1\}^{512} \to \{0,1\}^{256}\)</span>. Como o cabeçalho do Bitcoin possui 640 bits (80 bytes), uma única tentativa de mineração exige <strong>três invocações da função de compressão</strong>:</p>
+<ol>
+<li><strong>Primeiro Bloco da 1ª Hash (<span class="arithmatex">\(M^{(0)}\)</span>, 512 bits / Bytes 0 a 63):</strong></li>
+<li><code>nVersion</code> (Bytes 0–3, 32 bits): Versão do bloco (permite <em>version rolling</em> nos bits de propósito geral segundo o BIP 320).</li>
+<li><code>hashPrevBlock</code> (Bytes 4–35, 256 bits): Hash duplo do cabeçalho do bloco anterior (fixo durante toda a busca).</li>
+<li><code>hashMerkleRoot[0:27]</code> (Bytes 36–63, 224 bits): Os primeiros 28 bytes da raiz da Árvore de Merkle das transações.</li>
+<li>
+<p><strong>Propriedade Crítica:</strong> Todo o bloco <span class="arithmatex">\(M^{(0)}\)</span> independe de <code>nTime</code> e <code>nNonce</code>. Logo, o estado intermediário <span class="arithmatex">\(S_{\text{mid}} = \text{CF}(\text{IV}, M^{(0)})\)</span> é constante para <span class="arithmatex">\(2^{32}\)</span> variações de <code>nNonce</code>!</p>
+</li>
+<li>
+<p><strong>Segundo Bloco da 1ª Hash (<span class="arithmatex">\(M^{(1)}\)</span>, 512 bits / Bytes 64 a 127 com Padding):</strong></p>
+</li>
+<li><span class="arithmatex">\(W_0\)</span> (Bytes 64–67): Últimos 4 bytes da <code>hashMerkleRoot</code> (<code>merkle_tail</code>).</li>
+<li><span class="arithmatex">\(W_1\)</span> (Bytes 68–71): <code>nTime</code> (timestamp Unix de 32 bits).</li>
+<li><span class="arithmatex">\(W_2\)</span> (Bytes 72–75): <code>nBits</code> (alvo compactado de 32 bits, fixo por época de 2016 blocos).</li>
+<li><span class="arithmatex">\(W_3\)</span> (Bytes 76–79): <code>nNonce</code> (espaço de busca primário de 32 bits).</li>
+<li>
+<p><span class="arithmatex">\(W_4\)</span> a <span class="arithmatex">\(W_{15}\)</span> (Bytes 80–127): Padding determinístico do padrão FIPS 180-4 (<code>0x80000000</code> em <span class="arithmatex">\(W_4\)</span>, zeros de <span class="arithmatex">\(W_5\)</span> a <span class="arithmatex">\(W_{14}\)</span>, e o comprimento da mensagem <span class="arithmatex">\(640_{10} = \text{0x00000280}\)</span> em <span class="arithmatex">\(W_{15}\)</span>).</p>
+</li>
+<li>
+<p><strong>Bloco Único da 2ª Hash (<span class="arithmatex">\(M^{(2)}\)</span>, 512 bits):</strong></p>
+</li>
+<li><span class="arithmatex">\(W_0^{(2)}\)</span> a <span class="arithmatex">\(W_7^{(2)}\)</span>: Os 256 bits resultantes de <span class="arithmatex">\(H^{(1)} = \text{CF}(S_{\text{mid}}, M^{(1)})\)</span>.</li>
+<li><span class="arithmatex">\(W_8^{(2)}\)</span> a <span class="arithmatex">\(W_{15}^{(2)}\)</span>: Padding fixo para mensagem de 256 bits (<code>0x80000000</code> em <span class="arithmatex">\(W_8^{(2)}\)</span>, zeros de <span class="arithmatex">\(W_9^{(2)}\)</span> a <span class="arithmatex">\(W_{14}^{(2)}\)</span>, e comprimento <span class="arithmatex">\(256_{10} = \text{0x00000100}\)</span> em <span class="arithmatex">\(W_{15}^{(2)}\)</span>).</li>
+</ol>
+<h3 id="14-estrutura-algebrica-interna-da-funcao-de-compressao-sha-256">1.4. Estrutura Algébrica Interna da Função de Compressão SHA-256<a class="headerlink" href="#14-estrutura-algebrica-interna-da-funcao-de-compressao-sha-256" title="Permanent link">&para;</a></h3>
+<p>Cada chamada à função de compressão executa 64 rodadas sobre um vetor de estado de oito palavras de 32 bits <span class="arithmatex">\(V_t = (a_t, b_t, c_t, d_t, e_t, f_t, g_t, h_t) \in (\mathbb{Z}_{2^{32}})^8\)</span>, alimentado por um cronograma de expansão de mensagem (<em>Message Schedule</em>) <span class="arithmatex">\(W_0, \dots, W_{63}\)</span>:</p>
+<div class="arithmatex">\[W_t = \begin{cases} M_t &amp; \text{se } 0 \le t \le 15 \\ \sigma_1(W_{t-2}) \boxplus W_{t-7} \boxplus \sigma_0(W_{t-15}) \boxplus W_{t-16} &amp; \text{se } 16 \le t \le 63 \end{cases}\]</div>
+<p>onde <span class="arithmatex">\(\boxplus\)</span> representa adição modular <span class="arithmatex">\(\pmod{2^{32}}\)</span>, e as funções lineares de dispersão bit a bit sobre <span class="arithmatex">\(\mathbb{F}_2^{32}\)</span> são:</p>
+<div class="arithmatex">\[\sigma_0(x) = (x \ggg 7) \oplus (x \ggg 18) \oplus (x \gg 3)\]</div>
+<div class="arithmatex">\[\sigma_1(x) = (x \ggg 17) \oplus (x \ggg 19) \oplus (x \gg 10)\]</div>
+<p>Como ilustrado no diagrama da função de compressão acima, a cada rodada <span class="arithmatex">\(t \in [0, 63]\)</span>, apenas <strong>duas palavras de estado</strong> sofrem transformação aritmética direta (<span class="arithmatex">\(a_{t+1}\)</span> e <span class="arithmatex">\(e_{t+1}\)</span>), enquanto as outras seis apenas deslocam de posição (<span class="arithmatex">\(b_{t+1}=a_t, c_{t+1}=b_t, d_{t+1}=c_t, f_{t+1}=e_t, g_{t+1}=f_t, h_{t+1}=g_t\)</span>):</p>
+<div class="arithmatex">\[T_1 = h_t \boxplus \Sigma_1(e_t) \boxplus \text{Ch}(e_t, f_t, g_t) \boxplus K_t \boxplus W_t\]</div>
+<div class="arithmatex">\[T_2 = \Sigma_0(a_t) \boxplus \text{Maj}(a_t, b_t, c_t)\]</div>
+<div class="arithmatex">\[e_{t+1} = d_t \boxplus T_1, \quad a_{t+1} = T_1 \boxplus T_2\]</div>
+<p>com as funções não-lineares em <span class="arithmatex">\(\mathbb{F}_2\)</span> (grau algébrico 2):</p>
+<div class="arithmatex">\[\text{Ch}(e,f,g) = (e \wedge f) \oplus (\neg e \wedge g), \quad \text{Maj}(a,b,c) = (a \wedge b) \oplus (a \wedge c) \oplus (b \wedge c)\]</div>
+<p>e rotações cíclicas <span class="arithmatex">\(\Sigma_0(a) = (a \ggg 2) \oplus (a \ggg 13) \oplus (a \ggg 22)\)</span> e <span class="arithmatex">\(\Sigma_1(e) = (e \ggg 6) \oplus (e \ggg 11) \oplus (e \ggg 25)\)</span>.</p>
+<p><strong>A Origem da Dificuldade Criptoanalítica (Conflito de Estruturas Algébricas):</strong> As rotações <span class="arithmatex">\(\Sigma_i, \sigma_i\)</span> e o <span class="arithmatex">\(\oplus\)</span> (XOR) são lineares no corpo finito <span class="arithmatex">\(\mathbb{F}_2^{32}\)</span>, mas a adição <span class="arithmatex">\(\boxplus\)</span> com transporte de <em>carry</em> (<em>vai-um</em>) é linear no anel <span class="arithmatex">\(\mathbb{Z}_{2^{32}}\)</span> e <strong>fortemente não-linear em <span class="arithmatex">\(\mathbb{F}_2^{32}\)</span></strong> (o bit mais significativo do <em>carry</em> tem grau algébrico 32 em <span class="arithmatex">\(\mathbb{F}_2\)</span>). Simultaneamente, <span class="arithmatex">\(\text{Ch}\)</span> e <span class="arithmatex">\(\text{Maj}\)</span> quebram a linearidade em <span class="arithmatex">\(\mathbb{Z}_{2^{32}}\)</span>. Essa alternância ARX (<em>Add-Rotate-XOR</em>) destrói qualquer estrutura de subespaço vetorial após poucas rodadas.</p>
+<h3 id="15-estatistica-ajuste-de-dificuldade-e-espaco-de-busca">1.5. Estatística, Ajuste de Dificuldade e Espaço de Busca<a class="headerlink" href="#15-estatistica-ajuste-de-dificuldade-e-espaco-de-busca" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Processo de Bernoulli e Poisson:</strong> Modelando <span class="arithmatex">\(\text{SHA-256}^2\)</span> como uma família pseudoaleatória uniforme, cada avaliação de um cabeçalho distinto tem probabilidade independente de sucesso <span class="arithmatex">\(p = \frac{T + 1}{2^{256}} \approx \frac{1}{D \cdot 2^{32}}\)</span>, onde <span class="arithmatex">\(D = \frac{T_{\text{max}}}{T}\)</span> é a dificuldade da rede (<span class="arithmatex">\(T_{\text{max}} = (2^{16}-1)\cdot 2^{208}\)</span>).</li>
+<li><strong>Propriedade Sem Memória (<em>Memorylessness</em>):</strong> Se um minerador já testou <span class="arithmatex">\(10^{20}\)</span> hashes sem sucesso, a probabilidade de encontrar o bloco na próxima tentativa continua sendo exatamente <span class="arithmatex">\(p\)</span>. O número de tentativas até o sucesso segue uma <strong>Distribuição Geométrica</strong> com média <span class="arithmatex">\(\mathbb{E}[N] = 1/p\)</span>, e o tempo até encontrar um bloco a uma taxa de hash <span class="arithmatex">\(R\)</span> segue uma <strong>Distribuição Exponencial</strong> <span class="arithmatex">\(f(t) = \lambda e^{-\lambda t}\)</span> com <span class="arithmatex">\(\lambda = R \cdot p\)</span>.</li>
+<li><strong>Exaustão do Nonce e Custo da Merkle Tree:</strong> Como <span class="arithmatex">\(2^{32} \approx 4,29 \times 10^9\)</span> esgota o campo <code>nNonce</code> em microssegundos, alterar o <code>ExtraNonce</code> na transação <em>Coinbase</em> (folha <span class="arithmatex">\(L_0\)</span> da árvore de Merkle) requer recalcular apenas o caminho logarítmico de irmãos (<span class="arithmatex">\(\log_2 N_{\text{tx}}\)</span> compressões SHA-256), gerando uma nova <code>hashMerkleRoot</code> e um novo <span class="arithmatex">\(S_{\text{mid}}\)</span>.</li>
+</ul>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../introducao/04-como-ler/" class="btn btn-neutral float-left" title="Como estudar este material"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../02-estado-da-arte/" class="btn btn-neutral float-right" title="Estado da arte">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../introducao/04-como-ler/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../02-estado-da-arte/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

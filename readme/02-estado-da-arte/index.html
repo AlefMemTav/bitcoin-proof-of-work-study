@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://alefmemtav.github.io/bitcoin-proof-of-work-study/readme/02-estado-da-arte/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Estado da arte - Bitcoin Proof-of-Work Researcher</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Estado da arte";
+        var mkdocs_page_input_path = "readme/02-estado-da-arte.md";
+        var mkdocs_page_url = "/bitcoin-proof-of-work-study/readme/02-estado-da-arte/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Bitcoin Proof-of-Work Researcher
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Início</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Introdução</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/01-bitcoin/">Bitcoin em poucas palavras</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/02-hashes-e-sha256/">Hashes e SHA-256</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/03-proof-of-work/">O que é Proof of Work?</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introducao/04-como-ler/">Como estudar este material</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Conteúdo do README</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../01-formalizacao/">Formalização matemática</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Estado da arte</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#21-criptoanalise-classica-e-solvers-algebricos-linha-c">2.1. Criptoanálise Clássica e Solvers Algébricos (Linha C)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22-inteligencia-artificial-e-aprendizado-de-maquina-linha-b">2.2. Inteligência Artificial e Aprendizado de Máquina (Linha B)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#23-otimizacao-algoritmica-e-arquitetural-linhas-a-e-d">2.3. Otimização Algorítmica e Arquitetural (Linhas A e D)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#24-computacao-quantica-e-algoritmo-de-grover-linha-d">2.4. Computação Quântica e Algoritmo de Grover (Linha D)</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../03-linhas-de-investigacao/">Linhas de investigação</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../04-experimento/">Experimento e protótipo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../05-hipoteses-e-oportunidades/">Hipóteses e oportunidades</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Bitcoin Proof-of-Work Researcher</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Conteúdo do README</li>
+      <li class="breadcrumb-item active">Estado da arte</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="2-mapa-do-conhecimento-cientifico-e-estado-da-arte">2. Mapa do Conhecimento Científico e Estado da Arte<a class="headerlink" href="#2-mapa-do-conhecimento-cientifico-e-estado-da-arte" title="Permanent link">&para;</a></h2>
+<h3 id="21-criptoanalise-classica-e-solvers-algebricos-linha-c">2.1. Criptoanálise Clássica e Solvers Algébricos (Linha C)<a class="headerlink" href="#21-criptoanalise-classica-e-solvers-algebricos-linha-c" title="Permanent link">&para;</a></h3>
+<p>A literatura acadêmica (IACR CRYPTO, EUROCRYPT, FSE, ASIACRYPT) investigou intensivamente o SHA-256 desde sua publicação em 2001:</p>
+<ol>
+<li><strong>Criptoanálise Diferencial e <em>Local Collisions</em>:</strong></li>
+<li><em>Mendel, Nad &amp; Schläffer (EUROCRYPT 2013)</em> e <em>Li, Liu &amp; Wang (CRYPTO 2024)</em> demonstraram colisões práticas em <strong>31 a 39 rodadas</strong> do SHA-256 usando diferenciais modulares assinados (<em>signed bit differentials</em>) e condições de mensagem neutras.</li>
+<li>
+<p><strong>Limitação para Mineração:</strong> A propagação de características diferenciais exige liberdade total nas 16 palavras <span class="arithmatex">\(W_0 \dots W_{15}\)</span> do bloco de entrada. No bloco <span class="arithmatex">\(M^{(1)}\)</span> do Bitcoin, 12 das 16 palavras (<span class="arithmatex">\(W_4 \dots W_{15}\)</span>) são constantes rígidas de <em>padding</em>, e no bloco <span class="arithmatex">\(M^{(2)}\)</span>, 8 palavras (<span class="arithmatex">\(W_8 \dots W_{15}\)</span>) são constantes de <em>padding</em> e as 8 primeiras (<span class="arithmatex">\(W_0 \dots W_7\)</span>) são a saída caótica do primeiro hash, impedindo o controle de bits neutros além da rodada 18.</p>
+</li>
+<li>
+<p><strong>Ataques de Pré-imagem (<em>Meet-in-the-Middle</em> e <em>Bicliques</em>):</strong></p>
+</li>
+<li><em>Aoki et al. (2009)</em> e <em>Khovratovich, Rechberger &amp; Savelieva (2011)</em> introduziram a criptoanálise por <strong>Bicliques</strong>, alcançando ataques de pré-imagem em <strong>45 rodadas</strong> (e pseudo-pré-imagem em <strong>52 rodadas</strong>) com complexidade temporal de <span class="arithmatex">\(\approx 2^{255,5}\)</span> (ganho de um fator de apenas <span class="arithmatex">\(1,4\times\)</span> sobre força bruta).</li>
+<li>
+<p><strong>Limitação para Mineração:</strong> 52 rodadas ainda estão a 12 rodadas de distância de uma única chamada ao SHA-256 (64 rodadas) e a 76 rodadas de distância do <span class="arithmatex">\(\text{SHA-256}^2\)</span> (128 rodadas totais). Além disso, ataques <em>Meet-in-the-Middle</em> exigem acesso livre à variável de encadeamento de saída, que no Bitcoin é ocultada pela segunda camada do <span class="arithmatex">\(\text{SHA-256}\)</span>.</p>
+</li>
+<li>
+<p><strong>SAT Solvers, SMT e Bases de Gröbner (Criptoanálise Algébrica):</strong></p>
+</li>
+<li><em>Mironov &amp; Zhang (2006)</em>, <em>Nossum (2012)</em> e <em>Nejati et al. (2017–2020)</em> codificaram a inversão parcial do SHA-256 em Forma Normal Conjuntiva (CNF) via transformação de Tseitin, resultando em <span class="arithmatex">\(\approx 65.000\)</span> variáveis booleanas e <span class="arithmatex">\(\approx 280.000\)</span> cláusulas por bloco de compressão.</li>
+<li><strong>Resultado Experimental Reproduzível:</strong> Solvers CDCL modernos (<em>Kissat</em>, <em>CaDiCaL</em>, <em>CryptoMiniSat</em> com eliminação Gaussiana XOR) invertem pré-imagens de <strong>até 22–24 rodadas</strong> em minutos explorando propagação unitária nos bits do <em>padding</em>.Acima de 28 rodadas, a árvore de conflitos CDCL sofre explosão exponencial sem encontrar cláusulas aprendidas curtas, tornando-se <span class="arithmatex">\(\approx 10^6\)</span> vezes mais lenta por candidato que uma avaliação direta em hardware.</li>
+</ol>
+<h3 id="22-inteligencia-artificial-e-aprendizado-de-maquina-linha-b">2.2. Inteligência Artificial e Aprendizado de Máquina (Linha B)<a class="headerlink" href="#22-inteligencia-artificial-e-aprendizado-de-maquina-linha-b" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Distinguishers Neurais em Cifras ARX:</strong></li>
+<li>A partir do trabalho seminal de <em>Gohr (CRYPTO 2019)</em> sobre a cifra ARX <em>Speck32/64</em>, pesquisadores testaram redes ResNet, MLP e Transformers para prever bits do <em>nonce</em> a partir de hashes ou distinguir saídas de rodadas reduzidas do SHA-256 de sequências verdaderamente aleatórias.</li>
+<li>
+<p><strong>Limite Físico-Estatístico da Difusão:</strong> No SHA-256, o critério estrito de avalanche (SAC — <em>Strict Avalanche Criterion</em>, onde inverter 1 bit de entrada inverte cada bit de saída com probabilidade <span class="arithmatex">\(0,50 \pm \epsilon\)</span>) é atingido completamente na <strong>rodada 9</strong> de uma única compressão. Em experimentos controlados, redes neurais detectam correlações residuais estatisticamente significativas (<span class="arithmatex">\(\text{acurácia} \gt 50,5\%\)</span>) em até <strong>6 a 7 rodadas</strong>. Em 64 rodadas (e 128 no hash duplo), a mútua informação condicional sobre qualquer subconjunto polinomial de features é indistinguível de zero, pois a função de grau algébrico em <span class="arithmatex">\(\mathbb{F}_2\)</span> atinge grau máximo (<span class="arithmatex">\(2^{256}\)</span> monômios potenciais).</p>
+</li>
+<li>
+<p><strong>Onde a IA Realmente Funciona na Mineração:</strong></p>
+</li>
+<li>Embora redes neurais <strong>não possam prever bits de saída de 64 rodadas</strong>, algoritmos de <strong>Reinforcement Learning (RL) e Otimização Combinatória em Grafos</strong> (como <em>PrefixRL</em> da NVIDIA e <em>AlphaDev</em>) têm eficácia comprovada na <strong>síntese lógica de circuitos combinacionais</strong> das rodadas do SHA-256, descobrindo topologias de somadores <em>Carry-Save</em> (CSA) e árvores de compressores 3:2 / 4:2 que reduzem a contagem de transistores e o atraso crítico de propagação (<em>critical path delay</em>) em ASICs.</li>
+</ol>
+<h3 id="23-otimizacao-algoritmica-e-arquitetural-linhas-a-e-d">2.3. Otimização Algorítmica e Arquitetural (Linhas A e D)<a class="headerlink" href="#23-otimizacao-algoritmica-e-arquitetural-linhas-a-e-d" title="Permanent link">&para;</a></h3>
+<p>Aqui residem as <strong>únicas vitórias matemáticas reais e operacionais</strong> já demonstradas nas 64 rodadas completas:</p>
+<ol>
+<li><strong>Midstate Caching (Reaproveitamento da 1ª Compressão):</strong> Elimina 64 das 192 rodadas totais de cada tentativa (redução de <strong>33,33%</strong> no trabalho total).</li>
+<li><strong>Pré-cálculo das Rodadas <span class="arithmatex">\(R_0, R_1, R_2\)</span> do Bloco <span class="arithmatex">\(M^{(1)}\)</span>:</strong> Como <code>nNonce</code> ocupa a palavra <span class="arithmatex">\(W_3\)</span>, as rodadas <span class="arithmatex">\(t=0\)</span> (<span class="arithmatex">\(W_0\)</span>), <span class="arithmatex">\(t=1\)</span> (<span class="arithmatex">\(W_1\)</span>) e <span class="arithmatex">\(t=2\)</span> (<span class="arithmatex">\(W_2\)</span>) da segunda compressão **não dependem do <code>nNonce**</code>! Logo, os estados <span class="arithmatex">\((a_3, b_3, c_3, d_3, e_3, f_3, g_3, h_3)\)</span> podem ser pré-calculados uma única vez por segundo (<code>nTime</code>) e compartilhados por <span class="arithmatex">\(2^{32}\)</span> nonces, economizando mais 3 rodadas completas e metade da rodada <span class="arithmatex">\(t=3\)</span> (onde <span class="arithmatex">\(T_2 = \Sigma_0(a_3) \boxplus \text{Maj}(a_3, b_3, c_3)\)</span> também é constante!).</li>
+<li><strong>ASICBoost (Colisões Estruturais no <em>Message Schedule</em> <span class="arithmatex">\(W_t\)</span>):</strong></li>
+<li>Formalizado por <em>Timo Hanke e Sergio Demian Lerner (2016)</em>, baseia-se no fato de que a expansão de mensagem <span class="arithmatex">\(W_{16} \dots W_{63}\)</span> do bloco <span class="arithmatex">\(M^{(1)}\)</span> depende apenas de <span class="arithmatex">\(W_0 \dots W_{15}\)</span>.</li>
+<li>
+<p>Se gerarmos múltiplos candidatos que compartilham o mesmo final de <code>hashMerkleRoot</code> (<span class="arithmatex">\(W_0\)</span> idêntico em <span class="arithmatex">\(M^{(1)}\)</span>, chamado <em>Overt ASICBoost</em> via <em>Version Rolling</em> no bloco <span class="arithmatex">\(M^{(0)}\)</span>, ou <em>Covert ASICBoost</em> encontrando colisões nos últimos 4 bytes da raiz de Merkle), então para cada <code>nNonce</code> (<span class="arithmatex">\(W_3\)</span>), <strong>todo o vetor de expansão <span class="arithmatex">\(W_0 \dots W_{63}\)</span> de <span class="arithmatex">\(M^{(1)}\)</span> é 100% idêntico</strong> para <span class="arithmatex">\(k\)</span> cabeçalhos distintos! Isso permite calcular a expansão de mensagem (<span class="arithmatex">\(\sigma_0, \sigma_1\)</span> e somas modulares de 48 palavras) apenas <strong>uma vez</strong> para múltiplos blocos candidatos, economizando até <strong>15% a 20% da energia total do chip</strong>.</p>
+</li>
+<li>
+<p><strong>Poda Algébrica e <em>Early-Abort</em> nas Rodadas <span class="arithmatex">\(R_{57}\)</span> a <span class="arithmatex">\(R_{63}\)</span> do Bloco <span class="arithmatex">\(M^{(2)}\)</span>:</strong></p>
+</li>
+<li>Ao final da segunda compressão (<span class="arithmatex">\(M^{(2)}\)</span>), o hash final é dado pelo <em>feed-forward</em> de Davies-Meyer:</li>
+</ol>
+<div class="arithmatex">\[H_0^{(2)} = \text{IV}_0 \boxplus a_{64}, \quad H_1^{(2)} = \text{IV}_1 \boxplus b_{64}, \dots, \quad H_7^{(2)} = \text{IV}_7 \boxplus h_{64}\]</div>
+<ul>
+<li>No Bitcoin, devido à codificação <em>little-endian</em> do número de 256 bits, os 32 bits mais significativos do número correspondem à última palavra do hash, <span class="arithmatex">\(H_7^{(2)} = \text{IV}_7 \boxplus h_{64}\)</span>, e os 32 bits seguintes correspondem a <span class="arithmatex">\(H_6^{(2)} = \text{IV}_6 \boxplus g_{64}\)</span>!</li>
+<li>Observe o deslocamento de registradores do SHA-256:</li>
+</ul>
+<div class="arithmatex">\[h_{64} = g_{63} = f_{62} = e_{61} = d_{60} \boxplus T_1^{(60)}\]</div>
+<div class="arithmatex">\[g_{64} = f_{63} = e_{62} = d_{61} \boxplus T_1^{(61)}\]</div>
+<ul>
+<li><strong>Descoberta Algébrica Crucial:</strong> Para que <span class="arithmatex">\(H_7^{(2)} = 0\)</span> (exigido sempre que a dificuldade pede pelo menos 32 bits zero iniciais, o que ocorre no Bitcoin desde 2009!), é <strong>matematicamente obrigatório</strong> que:</li>
+</ul>
+<div class="arithmatex">\[e_{61} = h_{64} = -\text{IV}_7 \pmod{2^{32}} = 2^{32} - \text{0x5be0cd19} = \text{0xa41f32e7}\]</div>
+<ul>
+<li>Isso significa que <strong>na rodada 60</strong> (após calcular <span class="arithmatex">\(e_{61}\)</span>), já sabemos com 100% de certeza determinística se os 32 bits mais significativos do hash serão zero! Em <span class="arithmatex">\(1 - 2^{-32} \approx 99,99999997\%\)</span> das tentativas, <span class="arithmatex">\(e_{61} \neq \text{0xa41f32e7}\)</span>, permitindo <strong>abortar imediatamente as rodadas 61, 62 e 63</strong>, além de todas as 8 somas finais de Davies-Meyer e a expansão de <span class="arithmatex">\(W_{61}, W_{62}, W_{63}\)</span>!</li>
+<li>Mais ainda: sabendo que <span class="arithmatex">\(e_{61}\)</span> deve assumir a constante fixa <span class="arithmatex">\(\text{0xa41f32e7}\)</span> para qualquer bloco válido, na rodada 61 todas as funções que dependem de <span class="arithmatex">\(e_{61}\)</span> — como <span class="arithmatex">\(\Sigma_1(e_{61})\)</span> — tornam-se <strong>constantes conhecidas a priori</strong>!</li>
+</ul>
+<h3 id="24-computacao-quantica-e-algoritmo-de-grover-linha-d">2.4. Computação Quântica e Algoritmo de Grover (Linha D)<a class="headerlink" href="#24-computacao-quantica-e-algoritmo-de-grover-linha-d" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Fundamento:</strong> O algoritmo de Grover (<em>1996</em>) aplica amplificação de amplitude sobre uma superposição uniforme de <span class="arithmatex">\(N = 2^k\)</span> nonces, encontrando uma solução marcada em <span class="arithmatex">\(\frac{\pi}{4}\sqrt{2^d}\)</span> invocações do oráculo reversível <span class="arithmatex">\(U_{\text{SHA-256}^2}\)</span>.</li>
+<li><strong>Análise Física Concreta (<em>Aggarwal et al., 2018</em>):</strong></li>
+<li>Cada chamada ao oráculo quântico exige implementar <span class="arithmatex">\(\text{SHA-256}^2\)</span> de forma reversível (portas Toffoli e CNOT, sem descarte de qubits de lixo via <em>uncomputation</em>), consumindo cerca de <strong>2.400 qubits lógicos</strong> e <span class="arithmatex">\(\approx 1,5 \times 10^5\)</span> portas T por avaliação.</li>
+<li>Com correção de erros quânticos baseada em <em>Surface Codes</em> (taxa de erro físico de <span class="arithmatex">\(10^{-3}\)</span>), são necessários <span class="arithmatex">\(\approx 4,5 \times 10^6\)</span> qubits físicos.</li>
+<li><strong>O Gargalo da Paralelização Quântica:</strong> Ao contrário dos ASICs clássicos, onde dividir o trabalho entre <span class="arithmatex">\(P\)</span> chips reduz o tempo linearmente (<span class="arithmatex">\(1/P\)</span>), dividir uma busca de Grover entre <span class="arithmatex">\(P\)</span> processadores quânticos independentes reduz o ganho para <span class="arithmatex">\(\sqrt{2^d / P}\)</span> (perde-se vantagem quadrática na paralelização!). Para vencer a rede clássica dentro da janela de <span class="arithmatex">\(\tau \approx 600\text{ s}\)</span> na dificuldade atual (<span class="arithmatex">\(d \approx 78\)</span>), um computador quântico precisaria executar <span class="arithmatex">\(\approx 2^{39} \approx 5,5 \times 10^{11}\)</span> iterações de Grover <strong>em série</strong>, exigindo velocidades de porta lógica na casa dos terahertz (3 a 4 ordens de grandeza acima dos qubits supercondutores atuais).</li>
+</ul>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../01-formalizacao/" class="btn btn-neutral float-left" title="Formalização matemática"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../03-linhas-de-investigacao/" class="btn btn-neutral float-right" title="Linhas de investigação">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../01-formalizacao/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../03-linhas-de-investigacao/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

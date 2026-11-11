@@ -1,0 +1,47 @@
+name: Sync legacy Pages output
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+          cache: pip
+
+      - name: Install documentation dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Build MkDocs output
+        run: mkdocs build --strict --site-dir /tmp/mkdocs-site
+
+      - name: Copy output to the legacy Pages root
+        run: |
+          rm -rf 404.html assets css img index.html introducao js readme search search.html sitemap.xml sitemap.xml.gz
+          cp -a /tmp/mkdocs-site/. .
+          touch .nojekyll
+
+      - name: Commit generated site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .nojekyll 404.html assets css img index.html introducao js readme search search.html sitemap.xml sitemap.xml.gz
+          if git diff --cached --quiet; then
+            echo "Generated site is already up to date."
+            exit 0
+          fi
+          git commit -m "Build MkDocs site [skip ci]"
+          git push
