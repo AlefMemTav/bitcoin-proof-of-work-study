@@ -1,5 +1,10 @@
 # BITCOIN PROOF-OF-WORK RESEARCHER
 
+## Documentação
+
+A versão navegável deste estudo está disponível em
+[alefmemtav.github.io/bitcoin-proof-of-work-study](https://alefmemtav.github.io/bitcoin-proof-of-work-study/).
+
 A redução do custo computacional do *Proof of Work* (PoW) do Bitcoin divide-se em dois domínios matematicamente distintos: a **redução da cardinalidade do espaço de busca** (encontrar um bloco testando menos candidatos do que um processo de Bernoulli, o que exige quebrar a resistência a pré-imagem parcial de 64 rodadas do $\text{SHA-256}^2$) e a **redução da complexidade aritmética por candidato avaliado** (diminuir o número de operações booleanas, adições modulares e transições de portas lógicas necessárias para testar cada *nonce*).
 
 No estado da arte atual da criptoanálise clássica, **não existe atalho algébrico conhecido que reduza o número esperado de candidatos avaliados ($\mathcal{O}(2^d)$) nas 64 rodadas completas do $\text{SHA-256}^2$** — os melhores ataques de pré-imagem na literatura científica atingem no máximo 45 a 52 rodadas. Em contrapartida, **é matematicamente demonstrável e experimentalmente reproduzível reduzir em 25% a 42% o número de operações elementares de rodada por tentativa de hash** por meio de invariantes algébricas de estado intermediário (*Midstate*), pré-cálculo das rodadas iniciais independentes do *nonce* ($R_0$ a $R_2$), colisões estruturais no agendamento de mensagem (*Message Schedule* $W_t$ / ASICBoost) e poda algébrica nas rodadas finais (*Early-Abort* em $R_{57}$–$R_{63}$).

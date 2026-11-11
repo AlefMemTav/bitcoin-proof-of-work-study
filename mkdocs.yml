@@ -1,0 +1,21 @@
+site_name: Bitcoin Proof-of-Work Researcher
+site_description: Documentação introdutória e estudo técnico sobre Proof of Work do Bitcoin.
+site_url: https://alefmemtav.github.io/bitcoin-proof-of-work-study/
+
+theme:
+  name: readthedocs
+  language: pt-BR
+
+nav:
+  - Início: index.md
+  - Introdução:
+      - Bitcoin em poucas palavras: introducao/01-bitcoin.md
+      - Hashes e SHA-256: introducao/02-hashes-e-sha256.md
+      - O que é Proof of Work?: introducao/03-proof-of-work.md
+      - Como estudar este material: introducao/04-como-ler.md
+  - Conteúdo do README:
+      - Formalização matemática: readme/01-formalizacao.md
+      - Estado da arte: readme/02-estado-da-arte.md
+      - Linhas de investigação: readme/03-linhas-de-investigacao.md
+      - Experimento e protótipo: readme/04-experimento.md
+      - Hipóteses e oportunidades: readme/05-hipoteses-e-oportunidades.md
