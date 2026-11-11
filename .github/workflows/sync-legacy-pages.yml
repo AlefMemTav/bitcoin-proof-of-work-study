@@ -38,7 +38,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .nojekyll 404.html assets css img index.html introducao js readme search search.html sitemap.xml sitemap.xml.gz
+          git add -A
           if git diff --cached --quiet; then
             echo "Generated site is already up to date."
             exit 0
